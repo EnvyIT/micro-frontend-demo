@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MF-Shop JS-Book</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/bulma/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/product-detail.css">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="assets/shop_logo.png" width="50" height="50" alt="Bulma CSS logo">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="http://localhost:5000/index.html">
+        Shop
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="http://localhost:5002/index.html">
+            <strong><i class="fas fa-shopping-cart"></i>&nbsp; Warenkorb</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container is-fluid">
+  <div class="columns">
+    <div class="column is-two-fifths-desktop is-two-fifth-tablet">
+      <p class="title is-3">JavaScript - The Definitive Guide</p>
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <img src="assets/js_book.jpg"
+                 alt="Product picture of the book JavaScript - The Definitive Guide">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="columns">
+            <div class="column">
+              <i class="fas fa-star star-filled"></i>
+              <i class="fas fa-star star-filled"></i>
+              <i class="fas fa-star star-filled"></i>
+              <i class="fas fa-star star-filled"></i>
+              <i class="fas fa-star star-filled"></i>
+              <p class="title is-4 is-pulled-right">53.99&euro;</p>
+            </div>
+          </div>
+          <div class="column is-full">
+            <p>JavaScript is the programming language of the web and is used by more software developers today than any other programming
+              language.</p>
+            <p>For nearly 25 years this best seller has been the go-to guide for JavaScript programmers. The seventh edition is fully
+              updated to
+              cover the 2020 version
+              of JavaScript, and new chapters cover classes, modules, iterators, generators, Promises, async/await, and metaprogramming.
+              You will find illuminating and engaging example code throughout.</p>
+            <p>This book is for programmers who want to learn JavaScript and for web developers who want to take their understanding and
+              mastery
+              to the next level.
+              It begins by explaining the JavaScript language itself, in detail, from the bottom up. It then builds on that foundation to
+              cover
+              the web platform and Node.js.</p>
+          </div>
+        </div>
+      <div class="card-footer">
+        <a type="button" class="card-footer-item has-background-primary has-text-white">In den Einkaufswagen</a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<script src="js/menu.js"></script>
+</body>
+
+</html>
