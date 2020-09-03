@@ -5,13 +5,13 @@
   "description": "This is a simple micro frontend demo for my bachelor thesis.",
   "main": "index.js",
   "scripts": {
-    "hyperlinks": "concurrently \"json-server --watch db.json\" \"serve --listen 5000 01_hyperlinks/team-product\" \"serve --listen 5001 01_hyperlinks/team-detail\" \"serve --listen 5002 01_hyperlinks/team-checkout/\" \"opener http://localhost:5000/index.html\"",
-    "iframe": "concurrently \"json-server --watch db.json\" \"serve --listen 5000 01_hyperlinks/team-product\" \"serve --listen 5001 01_hyperlinks/team-detail\" \"serve --listen 5002 01_hyperlinks/team-checkout/\" \"opener http://localhost:5000/index.html\"",
+    "hyperlinks": "concurrently \"serve --listen 5000 01_hyperlinks/team-product\" \"serve --listen 5001 01_hyperlinks/team-detail\" \"serve --listen 5002 01_hyperlinks/team-checkout/\" \"opener http://localhost:5000/index.html\"",
+    "iframe": "concurrently \"serve --listen 5000 02_iframe/team-product\" \"serve --listen 5001 02_iframe/team-detail\" \"serve --listen 5002 02_iframe/team-checkout/\" \"opener http://localhost:5000/index.html\"",
     "ajax": "",
     "nginx": "",
     "tailor": "",
-    "webcomponents": "",
-    "appshell": ""
+    "webcomponents": "concurrently \"json-server --watch db.json\"",
+    "appshell": "concurrently \"json-server --watch db.json\""
   },
   "dependencies": {
     "bulma": "0.9.0",
