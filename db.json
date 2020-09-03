@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "JavaScript - The Definitive Guide",
+      "description": "<p>JavaScript is the programming language of the web and is used by more software developers today than any other programming\n              language.</p>\n            <p>For nearly 25 years this best seller has been the go-to guide for JavaScript programmers. The seventh edition is fully\n              updated to\n              cover the 2020 version\n              of JavaScript, and new chapters cover classes, modules, iterators, generators, Promises, async/await, and metaprogramming.\n              You will find illuminating and engaging example code throughout.</p>\n            <p>This book is for programmers who want to learn JavaScript and for web developers who want to take their understanding and\n              mastery\n              to the next level.\n              It begins by explaining the JavaScript language itself, in detail, from the bottom up. It then builds on that foundation to\n              cover\n              the web platform and Node.js.</p>",
+      "price": 53.99,
+      "image": "assets/js_book.jp"
+    },
+    {
+      "id": 2,
+      "title": "Microsoft Surface Book 2",
+      "description": " <p>Das leistungsstärkste: Surface aller Zeiten. Erlebe zweimal mehr Leistung als bisher und bis zu 17 Stunden Akkulaufzeit. Das\n            neue Surface Book 2 bietet beeindruckende Grafik mit einem dynamischen 13-Zoll-PixelSense-Display. Passt sich perfekt deinen\n            kreativen Gewohnheiten an: Das neue Surface Book ist vielseitiger Laptop, leistungsstarkes Tablet und tragbares Studio in einem.\n            Erleichtere deine Arbeit und werde produktiver dank der vielfältigen Einsatzmöglichkeiten. Design voller Innovation in jedem\n            Detail: Superleicht und ultraschnell: außergewöhnliche Leistung in einem Laptop dieser Größe. Bringe Ideen schnell zu Papier –\n            dank der Tastatur mit Hintergrundbeleuchtung und einem Display, das sich perfekt mit Stiftund Toucheingabe bedienen lässt. Nur\n            das Beste von Microsoft: Produktivität, Kreativität und Spaß ohne Einschränkungen. Erlebe die besten Microsoft-Innovationen, wie\n              beispielsweise 3D-Erlebnisse.</p>",
+      "price": 1216.49,
+      "image": "assets/laptop.jp"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript - The Definitive Guide",
+      "description": "<strong>Crystal Display</strong>\n            <hr/>\n            <p>Stürzen Sie sich in ein Meer voller Farben: Auf dem Dynamic Crystal Display können Sie realitätsnahe Farbspektren sehen.\n              Genießen Sie Szene für Szene eine Vielzahl an Details.</p>\n            <hr/>\n            <strong>HDR</strong>\n            <p>HDR sorgt für einen umfangreichen Kontrastumfang. Das führt zu einem Bild, das mit einem sehr breiten Farbspektrum und einer\n              riesigen Detailfülle glänzt – in sehr hellen genauso wie in komplett dunklen Szenen.</p>\n            <hr/>\n            <strong>3-seitig und rahmenlos Design</strong>\n            <p>Freuen Sie sich auf ein schlankes und elegantes TV-Gerät, das mit seinem minimalistischen und fast rahmenlosen Design den\n              Fokus aus unterschiedlichen Blickwinkeln ganz aufs Bild legt und damit zu einem echten Designstück wird. Fernsehen fast wie im\n              Kino.</p>\n            <hr/>\n            <strong>Ambient Mode</strong>\n            <p>Zeigen Sie Ihre Lieblingsbilder auf dem TV-Bildschirm und erleben Sie, wie sich der TV elegant in Ihre Dekoration einfügt.\n              Erstellen Sie aus Ihren Bildern eine Foto-Collage oder bringen Sie mit einer Slide-Show Abwechslung in Ihr Leben</p>\n          </div>",
+      "price": 53.99,
+      "image": "assets/tv.jp"
+    }
+  ],
+  "cart": {
+    "items": [],
+    "total": 0.0
+  }
+
+}

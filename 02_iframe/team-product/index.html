@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Frontend Demo</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles/bulma/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/product.css">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="assets/shop_logo.png" width="50" height="50" alt="Bulma CSS logo">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="http://localhost:5000/index.html">
+        Shop
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="http://localhost:5002/index.html">
+            <strong><i class="fas fa-shopping-cart"></i>&nbsp; Cart</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main class="container is-fluid">
+<div class="columns is-5">
+  <div class="column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          JavaScript - The Definitive Guide
+        </p>
+      </header>
+      <div class="card-content is-horizontal">
+        <div class="content">
+          <img src="assets/js_book.jpg"
+               class="level"
+               alt="Product picture of the book JavaScript - The Definitive Guide"
+          >
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a type="button" class="card-footer-item has-background-primary has-text-white"
+           href="http://localhost:5001/book.html">
+          Details
+        </a>
+      </footer>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          Microsoft Surface Book 2
+        </p>
+      </header>
+      <div class="card-content is-horizontal">
+        <div class="content">
+          <img src="assets/laptop.jpg"
+               class="level"
+               alt="Microsoft Surface Book 2 - Laptop"
+          >
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a type="button" class="card-footer-item has-background-primary has-text-white"
+           href="http://localhost:5001/laptop.html">
+          Details
+        </a>
+      </footer>
+    </div>
+  </div>
+  <div class="column">
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">
+        Samsung TU8079 138 cm (55 Zoll) LED TV<
+      </p>
+    </header>
+    <div class="card-content is-horizontal">
+      <div class="content">
+        <img src="assets/tv.jpg"
+             class="level"
+             alt="Samsung Smart TV 55 Zoll"
+        >
+      </div>
+    </div>
+    <footer class="card-footer">
+      <a type="button" class="card-footer-item has-background-primary has-text-white"
+         href="http://localhost:5001/tv.html">
+        Details
+      </a>
+    </footer>
+  </div>
+</div>
+</div>
+
+</main>
+</body>
+</html>
