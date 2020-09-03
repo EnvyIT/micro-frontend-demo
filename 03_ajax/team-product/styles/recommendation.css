@@ -1,0 +1,13 @@
+.recommendation-img {
+  width: 128px;
+  min-height: 128px;
+  height: 128px;
+}
+
+.carousel-caption>.text--black{
+  color: #0a0a0a;
+}
+
+.header--primary {
+  color: #00c4a7
+}

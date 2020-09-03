@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MF-Shop TV</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/bulma/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/product-detail.css">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="assets/shop_logo.png" width="50" height="50" alt="Bulma CSS logo">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="http://localhost:5000/index.html">
+        Shop
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="http://localhost:5002/index.html">
+            <strong><i class="fas fa-shopping-cart"></i>&nbsp;Warenkorb</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container is-fluid">
+
+
+  <div class="columns">
+    <div class="column is-half-desktop is-full-mobile">
+      <div class="columns">
+        <div class="column is-fullwidth">
+          <p class="title is-3">Samsung TU8079 138 cm (55 Zoll) LED TV</p>
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img src="assets/tv.jpg"
+                     alt="Samsung Smart TV 55 Zoll">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="columns">
+                <div class="column">
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <p class="title is-4 is-pulled-right">564.61&euro;</p>
+                </div>
+              </div>
+              <div class="column is-full">
+                <strong>Crystal Display</strong>
+                <hr/>
+                <p>Stürzen Sie sich in ein Meer voller Farben: Auf dem Dynamic Crystal Display können Sie realitätsnahe Farbspektren sehen.
+                  Genießen Sie Szene für Szene eine Vielzahl an Details.</p>
+                <hr/>
+                <strong>HDR</strong>
+                <p>HDR sorgt für einen umfangreichen Kontrastumfang. Das führt zu einem Bild, das mit einem sehr breiten Farbspektrum und einer
+                  riesigen Detailfülle glänzt – in sehr hellen genauso wie in komplett dunklen Szenen.</p>
+                <hr/>
+                <strong>3-seitig und rahmenlos Design</strong>
+                <p>Freuen Sie sich auf ein schlankes und elegantes TV-Gerät, das mit seinem minimalistischen und fast rahmenlosen Design den
+                  Fokus aus unterschiedlichen Blickwinkeln ganz aufs Bild legt und damit zu einem echten Designstück wird. Fernsehen fast wie im
+                  Kino.</p>
+                <hr/>
+                <strong>Ambient Mode</strong>
+                <p>Zeigen Sie Ihre Lieblingsbilder auf dem TV-Bildschirm und erleben Sie, wie sich der TV elegant in Ihre Dekoration einfügt.
+                  Erstellen Sie aus Ihren Bildern eine Foto-Collage oder bringen Sie mit einer Slide-Show Abwechslung in Ihr Leben</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a type="button" class="card-footer-item has-background-primary has-text-white">In den Einkaufswagen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-half-desktop is-full-mobile">
+      <div id="recommendation" class="column is-half-desktop is-full-mobile" data-fragment-url="http://localhost:5000/fragments/recommendation.html">
+        <a href="http://localhost:5000/recommendation.html">Aktuelle Empfehlungen</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/detail.js"></script>
+</body>
+
+</html>

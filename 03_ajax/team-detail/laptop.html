@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MF-Shop Laptop</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/bulma/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/fontawesome-free-5.14.0-web/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/product-detail.css">
+</head>
+
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="assets/shop_logo.png" width="50" height="50" alt="Bulma CSS logo">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="http://localhost:5000/index.html">
+        Shop
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="http://localhost:5002/index.html">
+            <strong><i class="fas fa-shopping-cart"></i>&nbsp; Warenkorb</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container is-fluid">
+
+  <div class="columns">
+    <div class="column is-half-desktop is-full-mobile">
+      <div class="columns">
+        <div class="column is-fullwidth">
+          <p class="title is-3">Microsoft Surface Book 2</p>
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img src="assets/laptop.jpg"
+                     alt="Microsoft Surface Book 2 - Laptop">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="columns">
+                <div class="column">
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star star-filled"></i>
+                  <i class="fas fa-star"></i>
+                  <p class="title is-4 is-pulled-right">1.216,49 &euro;</p>
+                </div>
+              </div>
+              <div class="column is-full">
+                <p>Das leistungsstärkste: Surface aller Zeiten. Erlebe zweimal mehr Leistung als bisher und bis zu 17 Stunden Akkulaufzeit. Das
+                  neue Surface Book 2 bietet beeindruckende Grafik mit einem dynamischen 13-Zoll-PixelSense-Display. Passt sich perfekt deinen
+                  kreativen Gewohnheiten an: Das neue Surface Book ist vielseitiger Laptop, leistungsstarkes Tablet und tragbares Studio in einem.
+                  Erleichtere deine Arbeit und werde produktiver dank der vielfältigen Einsatzmöglichkeiten. Design voller Innovation in jedem
+                  Detail: Superleicht und ultraschnell: außergewöhnliche Leistung in einem Laptop dieser Größe. Bringe Ideen schnell zu Papier –
+                  dank der Tastatur mit Hintergrundbeleuchtung und einem Display, das sich perfekt mit Stiftund Toucheingabe bedienen lässt. Nur
+                  das Beste von Microsoft: Produktivität, Kreativität und Spaß ohne Einschränkungen. Erlebe die besten Microsoft-Innovationen, wie
+                  beispielsweise 3D-Erlebnisse.</p>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a type="button" class="card-footer-item has-background-primary has-text-white">In den Einkaufswagen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-half-desktop is-full-mobile"
+         id="recommendation"
+         class="column is-half-desktop is-full-mobile"
+         data-fragment-url="http://localhost:5000/fragments/recommendation"
+    >
+        <a href="http://localhost:5000/recommendation.html">Aktuelle Empfehlungen</a>
+    </div>
+  </div>
+</main>
+
+<script src="js/detail.js"></script>
+</body>
+
+</html>
