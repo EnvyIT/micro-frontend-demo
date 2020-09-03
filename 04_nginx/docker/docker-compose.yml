@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    networks:
+      - nginx-net
+  team-dashboard:
+    build: ../team-dashboard/
+    container_name: dashboard
+    image: dashboard:microfrontend
+    ports:
+      - "5000:5000"
+    networks:
+      - nginx-net
+
+  team-product:
+    build: ../team-product/
+    container_name: product
+    image: product:microfrontend
+    ports:
+      - "5001:5001"
+    networks:
+      - nginx-net
+
+  team-user:
+    build: ../team-user/
+    container_name: user
+    image: user:microfrontend
+    ports:
+      - "5002:5002"
+    networks:
+      - nginx-net
+
+  team-video:
+    build: ../team-video/
+    container_name: video
+    image: video:microfrontend
+    ports:
+      - "5003:5003"
+    networks:
+      - nginx-net
+networks:
+  nginx-net:
+    driver: "bridge"

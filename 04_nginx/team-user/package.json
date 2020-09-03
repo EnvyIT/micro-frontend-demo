@@ -1,0 +1,13 @@
+{
+  "name": "user",
+  "version": "0.1.0",
+  "author": "Michael Eder",
+  "description": "This is a simple micro frontend demo for my bachelor thesis.",
+  "scripts": {
+    "user": "serve --listen 5002"
+  },
+  "dependencies": {
+    "serve": "11.3.2"
+  },
+  "devDependencies": {}
+}

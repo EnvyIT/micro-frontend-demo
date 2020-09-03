@@ -1,0 +1,13 @@
+{
+  "name": "video",
+  "version": "0.1.0",
+  "author": "Michael Eder",
+  "description": "This is a simple micro frontend demo for my bachelor thesis.",
+  "scripts": {
+    "video": "serve --listen 5003"
+  },
+  "dependencies": {
+    "serve": "11.3.2"
+  },
+  "devDependencies": {}
+}

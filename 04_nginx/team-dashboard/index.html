@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Micro-Frontend Demo - Dashboard</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<h1>Dashboard Demo</h1>
+
+<main class="container">
+  <div class="row">
+    <div class="col-sm">
+      <!--#include virtual="/product/fragments/dashlet" -->
+    </div>
+    <div class="col-sm">
+      <!--#include virtual="/user/fragments/dashlet" -->
+    </div>
+    <div class="col-sm">
+      <!--#include virtual="/video/fragments/dashlet" -->
+    </div>
+  </div>
+</main>
+
+<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
