@@ -1,0 +1,15 @@
+{
+  "name": "micro-frontend-demo",
+  "version": "0.1.0",
+  "author": "Michael Eder",
+  "description": "Server side composition with Tailor. A micro frontend composition service for Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node  index.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "node-tailor": "3.9.2"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+
+  tailor:
+    build: ../server/
+    container_name: tailor
+    image: tailor:microfrontend
+    ports:
+      - "5000:5000"
+    networks:
+      - tailor_net
+
+networks:
+  tailor_net:
+    driver: "bridge"

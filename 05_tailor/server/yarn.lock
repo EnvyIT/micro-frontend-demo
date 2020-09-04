@@ -1387,7 +1387,7 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-node-tailor@^3.9.2:
+node-tailor@3.9.2:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/node-tailor/-/node-tailor-3.9.2.tgz#dd9e7473c3dd78d343cc8472dd2df362b404f096"
   integrity sha512-Bo8ofQanC2u5mIZgy9iiG5NUBi9iGQ80bOGDblG/R3nv3BRLRCsZeID2TF8mSIxsOv/Ufg9xjcsKfx2zhPZdkQ==
