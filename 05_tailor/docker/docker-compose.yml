@@ -8,6 +8,9 @@ services:
     image: tailor:microfrontend
     ports:
       - "5000:5000"
+      - "5001:5001"
+      - "5002:5002"
+      - "5003:5003"
     networks:
       - tailor_net
 
