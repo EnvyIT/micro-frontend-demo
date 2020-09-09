@@ -1,0 +1,15 @@
+{
+  "name": "team-shared",
+  "version": "0.1.0",
+  "author": "Michael Eder",
+  "license": "MIT",
+  "repository": {},
+  "description": "This is a simple micro frontend demo for my bachelor thesis.",
+  "scripts": {
+    "start": "serve --listen 5003"
+  },
+  "dependencies": {
+    "serve": "11.3.2"
+  },
+  "devDependencies": {}
+}

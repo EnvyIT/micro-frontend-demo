@@ -94,9 +94,9 @@ class Products extends HTMLElement {
     <div class="card">
       <div class="card__title">${product.title}</div>
       <div class="card__image">
-        <img src="${product.image}" alt="${product.title}">
+        <img src="http://localhost:5010/product/${product.image}" alt="${product.title}">
       </div>
-      <button onclick="window.location='http://localhost:5000/product/${product.id}'">
+      <button onclick="window.location='http://localhost:5010/product/${product.id}'">
           Details
       </button>
     </div>

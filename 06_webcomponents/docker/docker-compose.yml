@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+
+  db:
+    build: ../db/
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - ../db/db.json:/usr/app/db.json
+    ports:
+      - "3000:3000"
+    networks:
+      - mfnet
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "5010:5010"
+    networks:
+      - mfnet
+
+  team-product:
+    build: ../team-product/
+    container_name: product
+    image: team-product:microfrontend
+    ports:
+      - "5000:5000"
+    networks:
+      - mfnet
+
+  team-detail:
+    build: ../team-detail/
+    container_name: detail
+    image: team-detail:microfrontend
+    ports:
+      - "5001:5001"
+    networks:
+      - mfnet
+
+  team-checkout:
+    build: ../team-checkout/
+    container_name: checkout
+    image: team-checkout:microfrontend
+    ports:
+      - "5002:5002"
+    networks:
+      - mfnet
+
+  team-shared:
+    build: ../team-shared/
+    container_name: shared
+    image: team-shared:microfrontend
+    ports:
+      - "5003:5003"
+    networks:
+      - mfnet
+
+networks:
+  mfnet:
+    driver: "bridge"

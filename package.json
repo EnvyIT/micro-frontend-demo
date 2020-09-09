@@ -9,7 +9,8 @@
     "iframe": "concurrently \"serve --listen 5000 02_iframe/team-product\" \"serve --listen 5001 02_iframe/team-detail\" \"serve --listen 5002 02_iframe/team-checkout/\" \"opener http://localhost:5000/index.html\"",
     "ajax": "concurrently \"serve --listen 5000 --cors 03_ajax/team-product\" \"serve --listen 5001 03_ajax/team-detail\" \"serve --listen 5002 03_ajax/team-checkout/\" \"opener http://localhost:5000/index.html\"",
     "webcomponents": "concurrently \"json-server --watch db.json\" \"serve --listen 5000 06_webcomponents/team-product\" \"serve --listen 5001 06_webcomponents/team-checkout\" \"serve --listen 5002 06_webcomponents/team-shared\" \"opener http://localhost:5000/page\"",
-    "appshell": "concurrently \"json-server --watch db.json\""
+    "appshell": "concurrently \"json-server --watch db.json\"",
+    "json-db": "concurrently \"json-server --watch db.json\""
   },
   "dependencies": {
     "bootstrap": "4.5.2",

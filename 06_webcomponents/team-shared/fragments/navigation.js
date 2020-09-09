@@ -32,7 +32,7 @@ class Navigation extends HTMLElement {
     <!-- It is necessary to include font style in main.html and the specific WebComponent
      Take a look at for more details: https://stackoverflow.com/questions/54546007/why-doesnt-font-awesome-work-in-my-shadow-dom
      --> 
-    <link rel="stylesheet" type="text/css" href="../public/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:5010/shared/public/vendor/fontawesome/css/all.min.css">
     <style>
       nav {
       flex: 1;
@@ -135,7 +135,7 @@ class Navigation extends HTMLElement {
       ${this.navigationStyle}
       <nav> 
           <div class="logo">
-            <img src="${src}" alt="${alt}" height="48px" width="auto">
+            <img src="http://localhost:5010/shared/${src}" alt="${alt}" height="48px" width="auto">
           </div>
           <div class="links">
                ${links}
