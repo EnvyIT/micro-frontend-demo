@@ -11,7 +11,7 @@ class CartProducts extends HTMLElement {
               <article class="media">
                 <div class="media-left">
                   <figure class="image is-48x48">
-                    <img src="assets/laptop.jpg" alt="Laptop">
+                    <img src="http://localhost:5010/shared${product.image}" alt="${product.title}">
                   </figure>
                 </div>
                 <div class="media-content">
@@ -101,6 +101,20 @@ class CartProducts extends HTMLElement {
       </div>
     </div>
     `;
+  }
+
+  render() {
+    this.fetchProducts().then(markup => {
+      this.shadowRoot.innerHTML = `${markup}`;
+    });
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  disconnectedCallback() {
+
   }
 
 }

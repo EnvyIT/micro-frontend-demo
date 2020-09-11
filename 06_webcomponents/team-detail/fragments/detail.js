@@ -26,7 +26,10 @@ class ProductDetail extends HTMLElement {
            <style>
               .star-filled {
                 color: #e5ca0e;
+              .card-footer>button
+                flex: 1;
               }
+              
           </style>
    `;
  }
@@ -77,8 +80,8 @@ class ProductDetail extends HTMLElement {
                     ${product.description}
                   </div>
                </div>
-               <div class="card-footer" slot="buy-button">
-                  <a type="button" class="card-footer-item has-background-primary has-text-white">Add to cart</a>
+               <div class="card-footer">
+                    <slot name="buy-button"></slot>
                </div>
             </div>
           </div>

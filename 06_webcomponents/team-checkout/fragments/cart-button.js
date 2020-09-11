@@ -5,12 +5,12 @@ class CartButton extends HTMLElement {
     this.attachShadow({mode: "open"});
   }
 
-  get productId() {
-    return this.getAttribute('productId');
+  get id() {
+    return this.getAttribute('id');
   }
 
-  set productId(value) {
-    this.setAttribute('productId', value);
+  set id(value) {
+    this.setAttribute('id', value);
   }
 
   get cartStyle() {
@@ -56,23 +56,31 @@ class CartButton extends HTMLElement {
     return response.json();
   }
 
-  connectedCallback() {
-    this.render();
+  addToCart() {
+    console.log('ProductId: ', this.id);
   }
 
   render() {
-    this.innerHTML = `
+    this.addToCart = this.addToCart.bind(this);
+    this.shadowRoot.innerHTML = `
                          ${this.cartStyle}
-                          <button class="button--primary">
-                             <strong><i class="fas fa-shopping-cart"></i>In den Einkaufswagen</strong>
+                          <button id="cart-button" class="button--primary">
+                             <strong><i class="fas fa-shopping-cart"></i>Add to cart</strong>
                           </button>`
   }
 
-  disconnectedCallback() {
+  connectedCallback() {
+    this.render();
+    this.attachEventHandler();
   }
 
-  attributeChangedCallback(attrName, oldVal, newVal) {
+  attachEventHandler() {
+    this.cartButton = this.shadowRoot.getElementById('cart-button');
+    this.cartButton.addEventListener('click', this.addToCart);
+  }
 
+  disconnectedCallback() {
+    this.cartButton.removeEventListener('click', this.addToCart);
   }
 
 }
