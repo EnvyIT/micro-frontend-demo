@@ -95,6 +95,7 @@ class Navigation extends HTMLElement {
     a[type=button]:active {
       background: #39d2ad;
     }
+    
     .badge{
       position: relative;
       top: -9px;
@@ -105,6 +106,11 @@ class Navigation extends HTMLElement {
       font-size: x-small;
       padding: 0.15em 0.4em;
       box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    }
+    
+    .badge:hover{
+      color: #1a91a1;
+      background: #ffffff;
     }
     
     </style>`;
@@ -139,7 +145,7 @@ class Navigation extends HTMLElement {
         this.fetchLinks().then(links => {
           const src = this.getAttribute('src');
           const alt = this.getAttribute('alt');
-          const badge = cart.length ? `<span class="badge">${cart.length}</span>` : '';
+          const badge = cart.length ? `<span class="badge">${cart.map(p => p.quantity).reduce((accumulator, currentValue) => accumulator + currentValue)}</span>` : '';
           this.shadowRoot.innerHTML = `
       ${this.navigationStyle}
       <nav> 
@@ -154,8 +160,8 @@ class Navigation extends HTMLElement {
                   >
                         <em class="fas fa-shopping-cart"></em> 
                       Cart 
+                       ${badge}
                   </a>
-                  ${badge}
                </div>
           </div>
       </nav>`;

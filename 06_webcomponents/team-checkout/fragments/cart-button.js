@@ -134,7 +134,6 @@ class CartButton extends HTMLElement {
   connectedCallback() {
     this.init()
     .then(() => this.render())
-    .then(() => this.detachEventHandler())
     .then(() => this.attachEventHandler());
   }
 
@@ -144,11 +143,7 @@ class CartButton extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.detachEventHandler();
-  }
-
-  detachEventHandler() {
-    this.cartButton.removeEventListener('click', this.addToCart.bind(this));
+    this.cartButton?.removeEventListener('click', this.addToCart.bind(this));
   }
 
 }

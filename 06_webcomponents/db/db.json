@@ -38,11 +38,11 @@
   ],
   "cart": [
     {
-      "id": 4,
-      "title": "Amazfit Bip Lite",
-      "description": "BIS ZU 45-TAGEN BATTERIELAUFZEIT: Leistungsstarke Batterie, die nach einmaligen Vollaufladen bis zu 45 Tage Strom versorgen kann\n3 ATM WASSERBESTÄNDIG: Das Watch ist so gestaltet, um alle Ihre Sporübungen entweder bei Regen oder in Sonnenschein in Ordnung zu stellen. Es ist 3 ATM-zertifiziert, was einer Wassertiefe von ca. 30m entspricht\nLEICHT: Sogar beim angenehmen Tag-und-Nacht Tragen werden Sie vergessen, dass es noch an Ihrem Handgelenk ist\nSPURAUFZEICHNUNG FÜR SPORTÜBUNGEN: Das Watch zeichnet jeden Tag die Daten der Sportübungen wie Indoor- und Outdoor-Laufen, Wandern und Radfahren auf\nDISPLAY IMMER EIN: Das Display ist immer eingeschaltet und ist sogar bei hellem Sonnenlicht gut zu lesen",
-      "price": 125.99,
-      "image": "/public/assets/images/watch.jpg",
+      "id": 5,
+      "title": "Beats Studio3 Wireless",
+      "description": "Kabellose High Performance Kopfhörer mit Noise Cancelling in Klassisch Rot Schwarz\nKompatibel mit iOS und Android\nPure ANC unterdrückt aktiv Außengeräusche\nAudiokalibrierung in Echtzeit bietet ein dauerhaft erstklassiges Hörerlebnis\nBis zu 22 Stunden Batterielaufzeit ermöglichen den ganzen Tag über eine kabellose Wiedergabe mit allen Funktionen\nDer W1 Chip von Apple und die marktführende Bluetooth Technologie sorgen für mehr Reichweite und weniger Unterbrechungen\nDank Fast Fuel genügen bei niedrigem Ladestand 10 Minuten Ladezeit für 3 Stunden Wiedergabe. Wiederaufladbare Lithium Ionen Batterie",
+      "price": 179,
+      "image": "/public/assets/images/beats.jpg",
       "quantity": 2
     },
     {
@@ -51,6 +51,22 @@
       "description": " <p>Das leistungsstärkste: Surface aller Zeiten. Erlebe zweimal mehr Leistung als bisher und bis zu 17 Stunden Akkulaufzeit. Das\n            neue Surface Book 2 bietet beeindruckende Grafik mit einem dynamischen 13-Zoll-PixelSense-Display. Passt sich perfekt deinen\n            kreativen Gewohnheiten an: Das neue Surface Book ist vielseitiger Laptop, leistungsstarkes Tablet und tragbares Studio in einem.\n            Erleichtere deine Arbeit und werde produktiver dank der vielfältigen Einsatzmöglichkeiten. Design voller Innovation in jedem\n            Detail: Superleicht und ultraschnell: außergewöhnliche Leistung in einem Laptop dieser Größe. Bringe Ideen schnell zu Papier –\n            dank der Tastatur mit Hintergrundbeleuchtung und einem Display, das sich perfekt mit Stiftund Toucheingabe bedienen lässt. Nur\n            das Beste von Microsoft: Produktivität, Kreativität und Spaß ohne Einschränkungen. Erlebe die besten Microsoft-Innovationen, wie\n              beispielsweise 3D-Erlebnisse.</p>",
       "price": 1216.49,
       "image": "/public/assets/images/laptop.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 1,
+      "title": "JavaScript - The Definitive Guide",
+      "description": "<p>JavaScript is the programming language of the web and is used by more software developers today than any other programming\n              language.</p>\n            <p>For nearly 25 years this best seller has been the go-to guide for JavaScript programmers. The seventh edition is fully\n              updated to\n              cover the 2020 version\n              of JavaScript, and new chapters cover classes, modules, iterators, generators, Promises, async/await, and metaprogramming.\n              You will find illuminating and engaging example code throughout.</p>\n            <p>This book is for programmers who want to learn JavaScript and for web developers who want to take their understanding and\n              mastery\n              to the next level.\n              It begins by explaining the JavaScript language itself, in detail, from the bottom up. It then builds on that foundation to\n              cover\n              the web platform and Node.js.</p>",
+      "price": 53.99,
+      "image": "/public/assets/images/js_book.jpg",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "title": "Amazfit Bip Lite",
+      "description": "BIS ZU 45-TAGEN BATTERIELAUFZEIT: Leistungsstarke Batterie, die nach einmaligen Vollaufladen bis zu 45 Tage Strom versorgen kann\n3 ATM WASSERBESTÄNDIG: Das Watch ist so gestaltet, um alle Ihre Sporübungen entweder bei Regen oder in Sonnenschein in Ordnung zu stellen. Es ist 3 ATM-zertifiziert, was einer Wassertiefe von ca. 30m entspricht\nLEICHT: Sogar beim angenehmen Tag-und-Nacht Tragen werden Sie vergessen, dass es noch an Ihrem Handgelenk ist\nSPURAUFZEICHNUNG FÜR SPORTÜBUNGEN: Das Watch zeichnet jeden Tag die Daten der Sportübungen wie Indoor- und Outdoor-Laufen, Wandern und Radfahren auf\nDISPLAY IMMER EIN: Das Display ist immer eingeschaltet und ist sogar bei hellem Sonnenlicht gut zu lesen",
+      "price": 125.99,
+      "image": "/public/assets/images/watch.jpg",
       "quantity": 1
     }
   ],

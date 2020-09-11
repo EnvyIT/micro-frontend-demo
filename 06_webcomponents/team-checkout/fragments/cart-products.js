@@ -137,16 +137,16 @@ class CartProducts extends HTMLElement {
   }
 
   checkout() {
-    this.cart.forEach(product => this.removeFromCart(product.id));
-    alert('Thank you for ordering in the MF-Demo-Shop!');
-    this.render();
+    const ids = this.cart.map(product => product.id).join(',');
+    this.deleteProduct(ids)
+    .then(() =>  alert('Thank you for ordering in the MF-Demo-Shop!'))
+    .then(() => this.render());
   }
 
   render() {
     this.fetchProducts().then(markup => {
       this.shadowRoot.innerHTML = `${markup}`;
     })
-    .then(() => this.detachEventHandler())
     .then(() => this.attachEventHandler());
   }
 
@@ -166,12 +166,8 @@ class CartProducts extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.detachEventHandler();
-  }
-
-   detachEventHandler() {
-    this.handlers.forEach((handler, id) => handler.removeEventListener('click', this.removeFromCart(id)));
-    this.checkoutButton.removeEventListener('click', this.checkout.bind(this));
+    this.handlers?.forEach((handler, id) => handler.removeEventListener('click', this.removeFromCart));
+    this.checkoutButton?.removeEventListener('click', this.checkout);
   }
 
 }
