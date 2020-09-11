@@ -11,6 +11,10 @@ class Navigation extends HTMLElement {
     return 'http://localhost:3000/links';
   }
 
+  get cartURL() {
+    return 'http://localhost:3000/cart';
+  }
+
   get alt() {
     return this.getAttribute('alt');
   }
@@ -93,21 +97,18 @@ class Navigation extends HTMLElement {
     }
     .badge{
       position: relative;
-      top: -15px;
-      width: 51px;
-      right: 16px;
-      border-radius: 22%;
-      background: #7fec2d;
+      top: -9px;
+      right: -4px;
+      border-radius: 50%;
+      background: #78ff7c63;
       color: black;
-      font-size: small;
-      padding: 0.1em 0.33em;
+      font-size: x-small;
+      padding: 0.15em 0.4em;
       box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
     }
     
     </style>`;
   }
-
-
 
   fetchLinks() {
     return new Promise(((resolve, reject) => {
@@ -120,18 +121,26 @@ class Navigation extends HTMLElement {
     }));
   }
 
+  fetchCart() {
+    return new Promise(((resolve, reject) => {
+      window.fetch(this.cartURL)
+      .then(response => response.json())
+      .then(data => resolve(data))
+      .catch(error => reject(error));
+    }));
+  }
 
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.fetchLinks().then(links => {
-      const src = this.getAttribute('src');
-      const alt = this.getAttribute('alt');
-      const productsInCart = this.getAttribute('productsInCart');
-      const badge = productsInCart ? `<span class="badge">${productsInCart}</span>` : '' ;
-      this.shadowRoot.innerHTML = `
+    this.fetchCart().then(cart =>
+        this.fetchLinks().then(links => {
+          const src = this.getAttribute('src');
+          const alt = this.getAttribute('alt');
+          const badge = cart.length ? `<span class="badge">${cart.length}</span>` : '';
+          this.shadowRoot.innerHTML = `
       ${this.navigationStyle}
       <nav> 
           <div class="logo">
@@ -150,11 +159,11 @@ class Navigation extends HTMLElement {
                </div>
           </div>
       </nav>`;
-    })
+        }));
   }
 
   disconnectedCallback() {
-
+    //detach event handler here
   }
 
 }

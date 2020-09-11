@@ -93,7 +93,7 @@ class ProductDetail extends HTMLElement {
   }
 
   disconnectedCallback() {
-
+    //detach event handler here
   }
 
 }

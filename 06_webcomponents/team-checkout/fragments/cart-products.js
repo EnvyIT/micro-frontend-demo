@@ -3,9 +3,10 @@ class CartProducts extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({mode: "open"});
+    this.handlers = new Map();
   }
 
-  createProductMarkup(product) {
+   createProductMarkup(product) {
     return `
         <div class="box">
               <article class="media">
@@ -23,15 +24,23 @@ class CartProducts extends HTMLElement {
                   </div>
                   <nav class="level is-mobile">
                     <div class="level-left">
-                      <a class="level-item" aria-label="trash">
-                  <span class="icon is-small">
-                    <i class="fas fa-trash" aria-hidden="true"></i>
-                  </span>
+                      <a id="remove-link-${product.id}" 
+                         class="level-item"
+                         aria-label="trash" 
+                      >
+                        <span class="icon is-small">
+                          <i class="fas fa-trash" aria-hidden="true"></i>
+                        </span>
                       </a>
                     </div>
                     <div class="level-right">
-                      <p class="is-size-5">
-                        <strong>${product.price}&euro;</strong>
+                      <p class="is-size-7">
+                        Quantity: 
+                        <strong>${product.quantity}</strong>
+                      </p>
+                      &nbsp;&nbsp;
+                      <p class="is-size-7">
+                        Price: <strong>${(product.price * product.quantity).toFixed(2)}&euro;</strong>
                       </p>
                     </div>
                   </nav>
@@ -41,12 +50,13 @@ class CartProducts extends HTMLElement {
     `;
   }
 
-  get cartURL() {
+   get cartURL() {
     return 'http://localhost:3000/cart';
   }
 
-  get cartProductsStyle() {
+   get cartProductsStyle() {
     return `
+      <link href="http://localhost:5010/shared/public/vendor/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
       <link href="http://localhost:5010/checkout/public/vendor/bulma/css/bulma.min.css"  type="text/css" rel="stylesheet">
     `;
   }
@@ -56,7 +66,10 @@ class CartProducts extends HTMLElement {
       let markup = `${this.cartProductsStyle}`;
       window.fetch(this.cartURL)
       .then(response => response.json())
-      .then(cart => markup += this.createCartProductsMarkup(cart))
+      .then(cart => {
+        markup += this.createCartProductsMarkup(cart);
+        this.cart = cart;
+      })
       .then(() => resolve(markup))
       .catch(error => reject(error));
     }));
@@ -65,9 +78,9 @@ class CartProducts extends HTMLElement {
   createCartProductsMarkup(cart) {
     let productMarkup = '';
     let total = 0.0;
-    cart.items.forEach(product => {
+    cart.forEach(product => {
       productMarkup += this.createProductMarkup(product);
-      total += product.price;
+      total += product.price * product.quantity;
     });
     return `
       <div class="columns">
@@ -86,11 +99,12 @@ class CartProducts extends HTMLElement {
                 <div class="column is-full">
                   <div class="is-size-5">
                     <p>Total:</p>
-                    <p class="title">${total}&euro;</p>
+                    <p class="is-size-5"><strong>${total.toFixed(2)}&euro;</strong></p>
+                    <br>
                   </div>
-                  <a class="button has-background-primary has-text-white is-fullwidth"
+                  <a id="checkout-button"
+                     class="button has-background-primary has-text-white is-fullwidth"
                      type="button"
-                     onclick="alert('Thank you for ordering in the MF-Demo-Shop!')"
                   >Checkout
                   </a>
                 </div>
@@ -103,18 +117,61 @@ class CartProducts extends HTMLElement {
     `;
   }
 
+  removeFromCart(id) {
+    this.deleteProduct(id).then(() => this.render());
+  }
+
+  async deleteProduct(id) {
+      const response = await fetch(`${this.cartURL}/${id}`, {
+        method: 'DELETE',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer'
+      });
+      return response.json();
+  }
+
+  checkout() {
+    this.cart.forEach(product => this.removeFromCart(product.id));
+    alert('Thank you for ordering in the MF-Demo-Shop!');
+    this.render();
+  }
+
   render() {
     this.fetchProducts().then(markup => {
       this.shadowRoot.innerHTML = `${markup}`;
-    });
+    })
+    .then(() => this.detachEventHandler())
+    .then(() => this.attachEventHandler());
   }
 
   connectedCallback() {
     this.render();
   }
 
-  disconnectedCallback() {
+  attachEventHandler() {
+    this.cart
+    .forEach(item => {
+      const removeLink = this.shadowRoot.getElementById(`remove-link-${item.id}`);
+      removeLink.addEventListener('click', () => this.removeFromCart(item.id));
+      this.handlers.set(item.id, removeLink);
+    });
+    this.checkoutButton = this.shadowRoot.getElementById('checkout-button');
+    this.checkoutButton.addEventListener('click', this.checkout.bind(this));
+  }
 
+  disconnectedCallback() {
+    this.detachEventHandler();
+  }
+
+   detachEventHandler() {
+    this.handlers.forEach((handler, id) => handler.removeEventListener('click', this.removeFromCart(id)));
+    this.checkoutButton.removeEventListener('click', this.checkout.bind(this));
   }
 
 }

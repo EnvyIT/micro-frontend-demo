@@ -3,14 +3,28 @@ class CartButton extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({mode: "open"});
+    this.products = [];
+    this.cart = [];
   }
 
   get id() {
-    return this.getAttribute('id');
+    return parseInt(this.getAttribute('id'));
   }
 
   set id(value) {
     this.setAttribute('id', value);
+  }
+
+  get cartURL() {
+    return 'http://localhost:3000/cart';
+  }
+
+  get productsURL() {
+    return 'http://localhost:3000/products';
+  }
+
+  get getProducts() {
+    return this.products;
   }
 
   get cartStyle() {
@@ -48,9 +62,9 @@ class CartButton extends HTMLElement {
     </style>`;
   }
 
-  async postData(url = '', data = {}) {
+  async processProduct(product, method, url = this.cartURL) {
     const response = await fetch(url, {
-      method: 'POST',
+      method,
       mode: 'cors',
       cache: 'no-cache',
       credentials: 'same-origin',
@@ -59,17 +73,53 @@ class CartButton extends HTMLElement {
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
-      body: JSON.stringify(data)
+      body: JSON.stringify(product)
     });
     return response.json();
   }
 
+  fetchProducts() {
+    return new Promise(((resolve, reject) => {
+      window.fetch(this.productsURL)
+      .then(response => response.json())
+      .then(products => {
+        this.products = [...products];
+      })
+      .then(() => resolve())
+      .catch(error => reject(error));
+    }));
+  }
+
+  fetchCart() {
+    return new Promise(((resolve, reject) => {
+      window.fetch(this.cartURL)
+      .then(response => response.json())
+      .then(cart => {
+        this.cart = [...cart];
+      })
+      .then(() => resolve())
+      .catch(error => reject(error));
+    }));
+  }
+
   addToCart() {
-    console.log('ProductId: ', this.id);
+    const selectedProduct = this.cart.find(product => product.id === this.id);
+    console.log('SelectedProduct: ', selectedProduct);
+    if (selectedProduct) {
+      ++selectedProduct.quantity;
+      this.processProduct(selectedProduct, 'PUT', `${this.cartURL}/${selectedProduct.id}`)
+      .then(() => this.init())
+      .then(() => console.log('Product ', selectedProduct, ' successfully updated'));
+    } else {
+      const newProduct = {...this.products.find(product => product.id === this.id), quantity: 1};
+      this.processProduct(newProduct, 'POST')
+      .then(() => this.init())
+      .then(() => console.log('Product ', newProduct, ' successfully added'));
+    }
+
   }
 
   render() {
-    this.addToCart = this.addToCart.bind(this);
     this.shadowRoot.innerHTML = `
                          ${this.cartStyle}
                           <button id="cart-button" class="button--primary">
@@ -77,18 +127,28 @@ class CartButton extends HTMLElement {
                           </button>`
   }
 
+  init() {
+    return this.fetchProducts().then(() => this.fetchCart());
+  }
+
   connectedCallback() {
-    this.render();
-    this.attachEventHandler();
+    this.init()
+    .then(() => this.render())
+    .then(() => this.detachEventHandler())
+    .then(() => this.attachEventHandler());
   }
 
   attachEventHandler() {
     this.cartButton = this.shadowRoot.getElementById('cart-button');
-    this.cartButton.addEventListener('click', this.addToCart);
+    this.cartButton.addEventListener('click', this.addToCart.bind(this));
   }
 
   disconnectedCallback() {
-    this.cartButton.removeEventListener('click', this.addToCart);
+    this.detachEventHandler();
+  }
+
+  detachEventHandler() {
+    this.cartButton.removeEventListener('click', this.addToCart.bind(this));
   }
 
 }
