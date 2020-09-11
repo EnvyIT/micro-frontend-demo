@@ -92,7 +92,7 @@ class Products extends HTMLElement {
       <div class="card__image">
         <img src="http://localhost:5010/shared${product.image}" alt="${product.title}">
       </div>
-      <button onclick="window.location='http://localhost:5010/detail/${product.id}'">
+      <button onclick="window.location='http://localhost:5010/detail/page/${product.id}'">
           Details
       </button>
     </div>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title>Micro Frontend Demo with WebComponents</title>
+  <meta name="description" content="A product page">
+  <meta name="author" content="Michael Eder">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="http://localhost:5010/shared/public/assets/css/normalize.css" type="text/css" rel="stylesheet">
   <link href="http://localhost:5010/shared/public/assets/css/main.css" type="text/css" rel="stylesheet">
   <link href="http://localhost:5010/shared/public/vendor/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
-  <link href="http://localhost:5010/product/public/assets/css/product.css" type="text/css" rel="stylesheet">
+  <link href="http://localhost:5010/checkout/public/vendor/bulma/css/bulma.min.css"  type="text/css" rel="stylesheet">
 </head>
+
 <body>
 
 <me-navigation src="public/assets/images/shop_logo.svg"
@@ -15,13 +20,14 @@
 </me-navigation>
 
 <main>
-  <me-products class="products"></me-products>
+
+  <me-product-detail id="4"></me-product-detail>
+
 </main>
 
 
+<script src="http://localhost:5010/detail/fragments/detail.js"></script>
 <script src="http://localhost:5010/shared/fragments/navigation.js"></script>
-<script src="http://localhost:5010/checkout/fragments/cart-button.js"></script>
-<script src="http://localhost:5010/product/fragments/products.js"></script>
 
 </body>
 </html>

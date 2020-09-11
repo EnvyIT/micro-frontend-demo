@@ -37,8 +37,14 @@
     }
   ],
   "cart": {
-    "items": [],
-    "total": 0.0
+    "items": [
+      {
+        "id": 2,
+        "title": "Microsoft Surface Book 2",
+        "price": 1216.49,
+        "image": "/public/assets/images/laptop.jpg"
+      }
+    ]
   },
   "links": [
     {
