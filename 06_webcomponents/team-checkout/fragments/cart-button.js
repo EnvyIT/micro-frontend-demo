@@ -5,6 +5,7 @@ class CartButton extends HTMLElement {
     this.attachShadow({mode: "open"});
     this.products = [];
     this.cart = [];
+    this.eventBus = new BroadcastChannel('mf_bus');
   }
 
   get id() {
@@ -104,19 +105,19 @@ class CartButton extends HTMLElement {
 
   addToCart() {
     const selectedProduct = this.cart.find(product => product.id === this.id);
-    console.log('SelectedProduct: ', selectedProduct);
     if (selectedProduct) {
       ++selectedProduct.quantity;
       this.processProduct(selectedProduct, 'PUT', `${this.cartURL}/${selectedProduct.id}`)
+      .then(()=> this.publish('cart-modified', selectedProduct))
       .then(() => this.init())
-      .then(() => console.log('Product ', selectedProduct, ' successfully updated'));
+      .then(() => console.log(`Product ${selectedProduct.title}  successfully added`));
     } else {
       const newProduct = {...this.products.find(product => product.id === this.id), quantity: 1};
       this.processProduct(newProduct, 'POST')
+      .then(()=> this.publish('cart-modified', newProduct))
       .then(() => this.init())
-      .then(() => console.log('Product ', newProduct, ' successfully added'));
+      .then(() => console.log(`Product ${newProduct.title}  successfully added`));
     }
-
   }
 
   render() {
@@ -144,7 +145,13 @@ class CartButton extends HTMLElement {
 
   disconnectedCallback() {
     this.cartButton?.removeEventListener('click', this.addToCart.bind(this));
+    this.eventBus.close();
   }
+
+  publish(topic, payload = {}) {
+    this.eventBus?.postMessage({topic , payload});
+  }
+
 
 }
 

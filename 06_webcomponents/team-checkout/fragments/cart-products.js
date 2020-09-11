@@ -4,6 +4,7 @@ class CartProducts extends HTMLElement {
     super();
     this.attachShadow({mode: "open"});
     this.handlers = new Map();
+    this.eventBus = new BroadcastChannel('mf_bus');
   }
 
    createProductMarkup(product) {
@@ -118,7 +119,9 @@ class CartProducts extends HTMLElement {
   }
 
   removeFromCart(id) {
-    this.deleteProduct(id).then(() => this.render());
+    this.deleteProduct(id)
+    .then(()=> this.publish('cart-modified', {id}))
+    .then(() => this.render());
   }
 
   async deleteProduct(id) {
@@ -137,10 +140,8 @@ class CartProducts extends HTMLElement {
   }
 
   checkout() {
-    const ids = this.cart.map(product => product.id).join(',');
-    this.deleteProduct(ids)
-    .then(() =>  alert('Thank you for ordering in the MF-Demo-Shop!'))
-    .then(() => this.render());
+    this.cart.forEach(product => this.removeFromCart(product.id));
+    alert('Thank you for ordering in the MF-Demo-Shop!');
   }
 
   render() {
@@ -168,6 +169,11 @@ class CartProducts extends HTMLElement {
   disconnectedCallback() {
     this.handlers?.forEach((handler, id) => handler.removeEventListener('click', this.removeFromCart));
     this.checkoutButton?.removeEventListener('click', this.checkout);
+    this.eventBus.close();
+  }
+
+  publish(topic, payload = {}) {
+    this.eventBus?.postMessage({topic , payload});
   }
 
 }

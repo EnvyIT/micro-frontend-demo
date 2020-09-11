@@ -4,7 +4,7 @@ class Navigation extends HTMLElement {
     super();
     //create Shadow DOM in open mode which is not hidden from outside DOM
     this.attachShadow({mode: "open"});
-
+    this.eventBus = new BroadcastChannel('mf_bus');
   }
 
   get navigationURL() {
@@ -137,6 +137,7 @@ class Navigation extends HTMLElement {
   }
 
   connectedCallback() {
+    this.subscribe('cart-modified', this.render.bind(this));
     this.render();
   }
 
@@ -169,7 +170,19 @@ class Navigation extends HTMLElement {
   }
 
   disconnectedCallback() {
-    //detach event handler here
+    this.eventBus.close();
+  }
+
+  publish(topic, payload = {}) {
+    this.eventBus?.postMessage({topic , payload});
+  }
+
+  subscribe(topic, callback) {
+    console.log('[navigation.js] ', topic);
+    this.eventBus.onmessage = (data) => {
+      console.log(data)
+      callback();
+    }
   }
 
 }
