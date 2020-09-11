@@ -7,8 +7,8 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.eot");
-  src: url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.woff2") format("woff2"), url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.woff") format("woff"), url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.ttf") format("truetype"), url("06_webcomponents/team-product/public/vendor/fontawesome-free-5.14.0-web/webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+  src: url("../webfonts/fa-solid-900.eot");
+  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
 
 .fa,
 .fas {

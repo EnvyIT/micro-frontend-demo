@@ -29,8 +29,8 @@ class Navigation extends HTMLElement {
 
   get navigationStyle() {
     return `
-    <!-- It is necessary to include font style in main.html and the specific WebComponent
-     Take a look at for more details: https://stackoverflow.com/questions/54546007/why-doesnt-font-awesome-work-in-my-shadow-dom
+    <!-- It is necessary to include the style in main.html and the specific WebComponent
+     For more details take a look at : https://stackoverflow.com/questions/54546007/why-doesnt-font-awesome-work-in-my-shadow-dom
      --> 
     <link rel="stylesheet" type="text/css" href="http://localhost:5010/shared/public/vendor/fontawesome/css/all.min.css">
     <style>
@@ -140,7 +140,9 @@ class Navigation extends HTMLElement {
           <div class="links">
                ${links}
                <div class="links--cta">
-                  <a type="button" class="button--primary">
+                  <a type="button" class="button--primary"
+                     href="http://localhost:5010/checkout/page/"
+                  >
                         <em class="fas fa-shopping-cart"></em> 
                       Cart 
                   </a>
