@@ -24,12 +24,11 @@ class ProductDetail extends HTMLElement {
            --> 
           <link href="http://localhost:5010/checkout/public/vendor/bulma/css/bulma.min.css"  type="text/css" rel="stylesheet">
            <style>
+  
               .star-filled {
                 color: #e5ca0e;
-              .card-footer>button
-                flex: 1;
               }
-              
+               
           </style>
    `;
  }

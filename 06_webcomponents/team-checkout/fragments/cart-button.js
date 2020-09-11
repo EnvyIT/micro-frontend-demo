@@ -15,8 +15,16 @@ class CartButton extends HTMLElement {
 
   get cartStyle() {
     return `<style>
-
+      
+      :host {
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex: 1;
+      }
+    
       button {
+      flex: 1;
       color: white;
       background: #29c296;
       border-radius: .15em;
