@@ -178,9 +178,8 @@ class Navigation extends HTMLElement {
   }
 
   subscribe(topic, callback) {
-    console.log('[navigation.js] ', topic);
-    this.eventBus.onmessage = (data) => {
-      console.log(data)
+    this.eventBus.onmessage = (event) => {
+      console.log(event);
       callback();
     }
   }
