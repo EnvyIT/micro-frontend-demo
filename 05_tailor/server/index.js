@@ -3,7 +3,7 @@
 const express = require('express')
 const Tailor = require('node-tailor')
 const fs = require('fs')
-const tailor = new Tailor({templatesPath: __dirname + '/templates'});
+const tailor = new Tailor({templatesPath: `${__dirname}/templates/`});
 const app = express();
 const productServer = express();
 const userServer = express();
@@ -33,7 +33,7 @@ productServer.get('/', (request, response) => {
 });
 
 const productPort = process.env.PORT || 5001;
-productServer.listen(productPort, () => console.log(`Product Fragment Server listening on port ${productPort}...`));
+productServer.listen(productPort, () => console.log(`Product fragment server listening on port ${productPort}...`));
 
 
 //User Fragment Server
@@ -43,7 +43,7 @@ userServer.get('/', (request, response) => {
 });
 
 const userPort = process.env.PORT || 5002;
-userServer.listen(userPort, () => console.log(`Product Fragment Server listening on port ${userPort}...`));
+userServer.listen(userPort, () => console.log(`User fragment server listening on port ${userPort}...`));
 
 
 //Video Fragment Server
@@ -53,4 +53,4 @@ videoServer.get('/', (request, response) => {
 });
 
 const videoPort = process.env.PORT || 5003;
-videoServer.listen(videoPort, () => console.log(`Product Fragment Server listening on port ${videoPort}...`));
+videoServer.listen(videoPort, () => console.log(`Video fragment server listening on port ${videoPort}...`));
