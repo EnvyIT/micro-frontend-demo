@@ -1,16 +1,22 @@
 import { registerApplication, start } from "single-spa";
+import {
+  constructApplications,
+  constructRoutes,
+  constructLayoutEngine,
+} from "single-spa-layout";
 
-registerApplication({
-  name: "@mf-me/navigation",
-  app: () => System.import("@mf-me/navigation"),
-  activeWhen: ["/", () => true],
+/*configuration for the single-spa layout engine*/
+const routes = constructRoutes(document.querySelector("#single-spa-layout"));
+
+const applications = constructApplications({
+  routes,
+  loadApp({ name }) {
+    return System.import(name);
+  },
 });
 
-registerApplication({
-  name: "@mf-me/vue-app",
-  app: () => System.import("@mf-me/vue-app"),
-  activeWhen: ["/vue"],
-});
+const layoutEngine = constructLayoutEngine({ routes, applications });
+applications.forEach(registerApplication);
 
 start({
   urlRerouteOnly: true,

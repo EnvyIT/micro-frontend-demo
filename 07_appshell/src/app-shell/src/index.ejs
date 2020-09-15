@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>Root Config</title>
-  <!--
-    Remove this if you only support browsers that support async/await.
-    This is needed by babel to share largeish helper code for compiling async/await in older
-    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
-  <!-- 
-    This CSP allows any SSL-enabled host, but you should limit these directives further to increase your app's security.
-    Learn more about CSP policies at https://content-security-policy.com/#directive
-  -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
-  <meta name="importmap-type" content="systemjs-importmap" />
-  <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
-  <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
-  <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js" as="script" crossorigin="anonymous">
+    <title>Root Config</title>
+    <!--
+      Remove this if you only support browsers that support async/await.
+      This is needed by babel to share largeish helper code for compiling async/await in older
+      browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
+    <!--
+      This CSP allows any SSL-enabled host, but you should limit these directives further to increase your app's security.
+      Learn more about CSP policies at https://content-security-policy.com/#directive
 
-  <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">-->
+    <meta name="importmap-type" content="systemjs-importmap"/>
+    <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
+    <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
+    <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
 
-    1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
-    2. UMD - https://github.com/umdjs/umd
-    3. Global variable
+    <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
 
-    More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
-  -->
-  <script type="systemjs-importmap">
+      1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
+      2. UMD - https://github.com/umdjs/umd
+      3. Global variable
+
+      More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
+    -->
+    <script type="systemjs-importmap">
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js"
       }
     }
-  </script>
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js" as="script">
 
-  <!-- Add your organization's prod import map URL to this script's src  -->
-  <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+    </script>
 
-  <% if (isLocal) { %>
-  <script type="systemjs-importmap">
+
+    <!-- Add your organization's prod import map URL to this script's src  -->
+    <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+    <script type="systemjs-importmap">
     {
       "imports": {
         "@mf-me/root-config": "//localhost:9000/mf-me-root-config.js",
@@ -54,36 +54,41 @@
         "@mf-me/vue-app": "//localhost:4201/js/app.js"
       }
     }
-  </script>
-  <% } %>
+    </script>
+    <!--
+      If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
+      Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.16.0/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.js"></script>
 
-  <!--
-    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script>
+ <!-- single-spa layout engine for ordering rendered applications -->
+    <template id="single-spa-layout">
+        <single-spa-router>
+            <nav class="topnav">
+                <application name="@mf-me/navigation"></application>
+            </nav>
+            <div class="main-content">
+                <route path="vue">
+                    <application name="@mf-me/vue-app"></application>
+                </route>
+            </div>
+        </single-spa-router>
+    </template>
 
-  <% if (isLocal) { %>
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.16.0/dist/import-map-overrides.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/system.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/amd.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.js"></script>
-  <% } else { %>
-  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.16.0/dist/import-map-overrides.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/system.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/amd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.min.js"></script>
-  <% } %>
 </head>
 <body>
-  <main></main>
-  <script>
-    System.import('@mf-me/root-config');
-    System.import('@mf-me/navigation');
-    System.import('@mf-me/vue-app');
-  </script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+<main></main>
+<script>
+  System.import('@mf-me/root-config');
+  System.import('@mf-me/navigation');
+  System.import('@mf-me/vue-app');
+</script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 </html>
