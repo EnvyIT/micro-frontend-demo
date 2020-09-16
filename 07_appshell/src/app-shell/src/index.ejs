@@ -40,7 +40,6 @@
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.5/lib/system/single-spa.min.js"
       }
     }
-
     </script>
 
 
@@ -51,7 +50,7 @@
       "imports": {
         "@mf-me/root-config": "//localhost:9000/mf-me-root-config.js",
         "@mf-me/navigation": "//localhost:4200/main.js",
-        "@mf-me/vue-app": "//localhost:4201/js/app.js"
+        "@mf-me/vue": "//localhost:4201/js/app.js"
       }
     }
     </script>
@@ -66,18 +65,17 @@
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.4.0/dist/extras/named-exports.js"></script>
 
  <!-- single-spa layout engine for ordering rendered applications -->
-    <template id="single-spa-layout">
-        <single-spa-router>
+        <single-spa-router id="single-spa-layout">
             <nav class="topnav">
                 <application name="@mf-me/navigation"></application>
             </nav>
             <div class="main-content">
                 <route path="vue">
-                    <application name="@mf-me/vue-app"></application>
+                    <application name="@mf-me/vue"></application>
                 </route>
             </div>
         </single-spa-router>
-    </template>
+
 
 </head>
 <body>
@@ -85,7 +83,7 @@
 <script>
   System.import('@mf-me/root-config');
   System.import('@mf-me/navigation');
-  System.import('@mf-me/vue-app');
+  System.import('@mf-me/vue');
 </script>
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
