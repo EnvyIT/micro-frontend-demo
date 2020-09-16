@@ -1,4 +1,6 @@
 $nav-color: #fcfcfc;
+$vue-green: #41b883;
+$ng-red: #dd0031;
 
 .sidenav {
   background: $nav-color;
@@ -8,4 +10,12 @@ $nav-color: #fcfcfc;
     height: 100%;
     width: 100%;
   }
+}
+
+.ng-red {
+  color: $ng-red !important;
+}
+
+.vue-green {
+  color: $vue-green !important;
 }
