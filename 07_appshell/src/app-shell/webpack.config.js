@@ -1,6 +1,10 @@
 const webpackMerge = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+
+// Try the environment variable, otherwise use root
+const ASSET_PATH = process.env.ASSET_PATH || "/";
 
 module.exports = (webpackConfigEnv) => {
   const orgName = "mf-me";
@@ -15,6 +19,9 @@ module.exports = (webpackConfigEnv) => {
     devServer: {
       historyApiFallback: true,
     },
+    output: {
+      publicPath: ASSET_PATH,
+    },
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,
@@ -23,6 +30,9 @@ module.exports = (webpackConfigEnv) => {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal === "true",
           orgName,
         },
+      }),
+      new webpack.DefinePlugin({
+        "process.env.ASSET_PATH": JSON.stringify(ASSET_PATH),
       }),
     ],
   });

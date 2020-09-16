@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100vh;
+}
+
+.main-content,
+.single-spa-container,
+.main-content > div {
+  height: calc(100vh - 64px);
+}
+
+.main-content {
+  position: fixed;
+  left: 300px;
+  top: 64px;
+  width: 78%;
+}
+
+.single-spa-container {
+  padding: 2em 4em;
+}
+
+.topnav {
+  position: fixed;
+  background-color: #444 !important;
+}

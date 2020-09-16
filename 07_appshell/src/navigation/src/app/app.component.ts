@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   }
 
   get backgroundImage(): string {
-    return assetUrl('/images/office.jpg');
+    return assetUrl('/images/background.jpeg');
   }
 
   ngOnInit(): void {}
