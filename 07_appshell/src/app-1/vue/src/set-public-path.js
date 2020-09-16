@@ -1,3 +1,3 @@
 import { setPublicPath } from "systemjs-webpack-interop";
 
-setPublicPath("@mf-me/vue", 2);
+setPublicPath("@mf-me/corona", 2);

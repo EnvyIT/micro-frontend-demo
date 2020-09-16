@@ -1,5 +1,5 @@
 {
-  "name": "me-nav",
+  "name": "health",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:me-nav": "ng build me-nav --prod --deploy-url http://localhost:4200/",
-    "serve:single-spa:me-nav": "ng s --project me-nav --disable-host-check --port 4200 --deploy-url http://localhost:4200/ --live-reload false"
+    "build:single-spa:health": "ng build health --prod --deploy-url http://localhost:4202/",
+    "serve:single-spa:health": "ng s --project health --disable-host-check --port 4202 --deploy-url http://localhost:4202/ --live-reload false"
   },
   "private": true,
   "dependencies": {
@@ -32,9 +32,9 @@
     "@angular-devkit/build-angular": "~0.1001.1",
     "@angular/cli": "~10.1.1",
     "@angular/compiler-cli": "~10.1.1",
+    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

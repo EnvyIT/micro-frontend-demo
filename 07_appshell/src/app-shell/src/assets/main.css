@@ -13,7 +13,7 @@ body {
   position: fixed;
   left: 300px;
   top: 64px;
-  width: 78%;
+  width: 100%;
 }
 
 .single-spa-container {
