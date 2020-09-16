@@ -11,4 +11,4 @@ const routes: Routes = [{ path: '**', component: EmptyRouteComponent }];
   exports: [RouterModule],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
 })
-export class MeRoutingModule {}
+export class AppRoutingModule {}

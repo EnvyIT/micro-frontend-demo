@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"
+      >{{ statisticData.country }}- {{ statisticData.date.calendar() }}</span
+    >
+  </div>
+  <div class="card-content">
+    <div class="chart">
+      <canvas
+        baseChart
+        [data]="statisticData.chartData"
+        [labels]="statisticData.chartLabel"
+        [chartType]="pieChartType"
+        [options]="pieChartOptions"
+        [colors]="pieChartColors"
+        [legend]="statisticData.chartLegend"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>

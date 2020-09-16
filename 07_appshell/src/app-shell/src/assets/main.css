@@ -13,10 +13,7 @@ body {
   position: fixed;
   left: 300px;
   top: 64px;
-  width: 100%;
-}
-
-.single-spa-container {
+  width: calc(100vw - 300px);
   padding: 2em 4em;
 }
 
