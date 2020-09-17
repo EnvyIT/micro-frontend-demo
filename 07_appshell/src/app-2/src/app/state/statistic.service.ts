@@ -18,7 +18,10 @@ export class StatisticService {
     this.http
       .fetchAllLiveStatusForCountry(country)
       .toPromise()
-      .then((response) => StatisticService.mapToStatistic(response))
+      .then((response) => {
+        console.log('Response successful', response);
+        return StatisticService.mapToStatistic(response);
+      })
       .then((statistic) => this.updateStore(statistic))
       .catch((error) => console.log(error));
   }
