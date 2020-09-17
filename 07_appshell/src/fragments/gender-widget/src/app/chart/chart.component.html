@@ -1,0 +1,29 @@
+<h2>Geschlechtsverteilung Covid-19 &nbsp;</h2>
+<img
+  class="logo"
+  src="assets/webcomponent.jpg"
+  alt="Webcomponent Logo"
+  title="Webcomponent + Angular"
+/>
+<div class="card">
+  <div class="card-header">
+    <span class="card-title"
+      >Letzte Aktualisierung der Daten: {{ lastUpdate | date }}</span
+    >
+  </div>
+  <div>
+    <div>
+      <div style="display: block">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+        >
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
