@@ -1,7 +1,7 @@
 const fs = require("fs-extra");
 const concat = require("concat");
 
-const outputFolder = "elements";
+const outputFolder = "../elements";
 const srcFolder = "./dist/gender-widget/";
 
 (async function build() {
