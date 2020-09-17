@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { EmptyRouteComponent } from './empty-route/empty-route.component';
 import { AppComponent } from './app.component';
@@ -13,5 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [BrowserModule, AppRoutingModule, ChartsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}

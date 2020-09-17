@@ -28,3 +28,7 @@ body {
   width: 3em;
   height: 3em;
 }
+
+.card {
+  padding: 2em;
+}

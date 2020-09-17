@@ -1,29 +1,27 @@
-<h2>Geschlechtsverteilung Covid-19 &nbsp;</h2>
-<img
-  class="logo"
-  src="assets/webcomponent.jpg"
-  alt="Webcomponent Logo"
-  title="Webcomponent + Angular"
-/>
-<div class="card">
-  <div class="card-header">
-    <span class="card-title"
-      >Letzte Aktualisierung der Daten: {{ lastUpdate | date }}</span
-    >
-  </div>
-  <div>
+<div class="chart">
+  <h2>Geschlechtsverteilung Covid-19 &nbsp;</h2>
+  <img
+    class="logo"
+    src="data:image/jpeg;base64,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"
+    alt="Webcomponent Logo"
+    title="Webcomponents + Angular"
+  />
+  <div class="card">
     <div>
-      <div style="display: block">
-        <canvas
-          baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          [chartType]="barChartType"
-        >
-        </canvas>
+      <div>
+        <div style="display: block">
+          <canvas
+            baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+          >
+          </canvas>
+        </div>
       </div>
     </div>
   </div>
+
 </div>

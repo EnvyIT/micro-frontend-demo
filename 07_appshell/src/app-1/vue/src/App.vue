@@ -1,12 +1,14 @@
 <template>
-  <h1>Übersicht Österreich</h1>
-  <img
-    class="logo"
-    src="./assets/logo.png"
-    alt="Vue.js Logo"
-    title="Vue.js v.3"
-  />
-  <Overview class="overview" />
+  <div class="chart">
+    <h1>Übersicht Österreich</h1>
+    <img
+        class="logo"
+        src="./assets/logo.png"
+        alt="Vue.js Logo"
+        title="Vue.js v.3"
+    />
+    <Overview class="overview"/>
+  </div>
 </template>
 
 <script>
@@ -24,9 +26,11 @@ export default {
 h1 {
   display: inline-block;
 }
+
 #app {
   display: flex;
 }
+
 .overview {
   display: flex;
 }

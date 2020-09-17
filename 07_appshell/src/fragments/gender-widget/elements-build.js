@@ -12,6 +12,4 @@ const srcFolder = "./dist/gender-widget/";
   ];
   await fs.ensureDir(outputFolder);
   await concat(files, `${outputFolder}/chart.js`);
-  await fs.copy(`${srcFolder}/styles.css`, `${outputFolder}/styles.css`);
-  await fs.copy(`${srcFolder}/assets`, `${outputFolder}/assets`);
 })();

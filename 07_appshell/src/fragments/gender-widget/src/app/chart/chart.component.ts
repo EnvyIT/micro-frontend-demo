@@ -21,7 +21,7 @@ export class ChartComponent implements OnInit {
       },
     },
   };
-  public barChartLabels: Label[] = ['17.09.2020'];
+  public barChartLabels: Label[] = ['Letzte Aktualisierung der Daten 17.09.2020'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
@@ -29,8 +29,6 @@ export class ChartComponent implements OnInit {
     { data: [48, 12], label: 'Weiblich' },
     { data: [52, 50], label: 'Männlich' },
   ];
-
-  public lastUpdate = moment('2020-09-17T00:00:00');
 
   constructor() {}
 

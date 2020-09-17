@@ -16,6 +16,32 @@ if (environment.production) {
   enableProdMode();
 }
 
+const loadScript = (url: string) =>  {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = url;
+    function onLoad() {
+      resolve();
+      cleanup();
+    }
+    function onError(event: Event) {
+      reject(event);
+      cleanup();
+    }
+    function cleanup() {
+      script.removeEventListener('load', onLoad);
+      script.removeEventListener('error', onError);
+    }
+    script.addEventListener('load', onLoad);
+    script.addEventListener('error', onError);
+    document.head.appendChild(script);
+  });
+}
+
+const scripts = [
+  loadScript('http://localhost:5050/chart.js')
+]
+
 const lifecycles = singleSpaAngular({
   bootstrapFunction: (singleSpaProps) => {
     singleSpaPropsSubject.next(singleSpaProps);
@@ -28,6 +54,10 @@ const lifecycles = singleSpaAngular({
   NgZone,
 });
 
-export const bootstrap = lifecycles.bootstrap;
+export const bootstrap = [
+  () => Promise.all(scripts),
+  lifecycles.bootstrap,
+]
+
 export const mount = lifecycles.mount;
 export const unmount = lifecycles.unmount;
