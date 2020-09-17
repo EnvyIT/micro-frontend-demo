@@ -4,6 +4,7 @@ import { StatisticQuery } from './state/statistic.query';
 import { StatisticState } from './state/statistic.store';
 import { Observable } from 'rxjs';
 import { StatisticService } from './state/statistic.service';
+import { assetUrl } from '../single-spa/asset-url';
 
 @Component({
   selector: 'me-root',
@@ -17,6 +18,10 @@ export class AppComponent implements OnInit {
     private statisticQuery: StatisticQuery,
     private statisticService: StatisticService
   ) {}
+
+  get angularLogo() {
+    return assetUrl('ng-logo.png');
+  }
 
   ngOnInit(): void {
     this.statisticService.fetchData();

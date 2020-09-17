@@ -23,3 +23,8 @@ body {
   position: fixed;
   background-color: #444 !important;
 }
+
+.logo {
+  width: 3em;
+  height: 3em;
+}
