@@ -5,12 +5,12 @@ import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
 import { createCustomElement } from '@angular/elements';
 import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [AppComponent, ChartComponent],
   imports: [BrowserModule, ChartsModule],
-  exports: [ChartComponent],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, ChartComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {

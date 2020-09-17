@@ -1,13 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
-import { Label } from 'ng2-charts';
-import * as moment from 'moment';
+import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import {Label} from 'ng2-charts';
 
 @Component({
   selector: 'ge-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss'],
+  styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
