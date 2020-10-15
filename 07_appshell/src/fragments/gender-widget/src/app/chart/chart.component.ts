@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {Label} from 'ng2-charts';
 
 @Component({
-  selector: 'ge-chart',
+  selector: 'me-chart-fragment',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
