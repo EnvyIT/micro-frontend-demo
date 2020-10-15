@@ -9,13 +9,14 @@ import { ChartsModule } from 'ng2-charts';
   declarations: [ChartComponent],
   imports: [BrowserModule, ChartsModule],
   providers: [],
-  bootstrap: [ChartComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 
-  constructor(injector: Injector) {
-    const chartElement = createCustomElement(ChartComponent, {injector});
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const chartElement = createCustomElement(ChartComponent, {injector: this.injector});
     customElements.define('me-chart-fragment', chartElement);
   }
 
