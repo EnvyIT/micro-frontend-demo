@@ -8,11 +8,11 @@ The micro frontend is running on port ``localhost:9000``.
 
 Following  are running:
 
-|   Name 	|  Framework 	|   URL	|   	|  	|
-|---	|---	|---	|---	|---	|
-|  app-1 	|    Vue.js	|   http://localhost:4201	|   	|   	|
-|  app-2 	|   Angular	|   http://localhost:4202	|   	|   	|
-|  app-shell	|   single-spa	|   http://localhost:9000	|   	|   	|
-|  fragments	|  Angular Elements + WebComponents	|   http://localhost:5050/charts.js	|   	|   	|
-|  navigation	|  Angular	|   http://localhost:4200	|   	|   	|
+|   Name 	|  Framework 	|   URL	|   	
+|---	|---	|---	|
+|  app-1 	|    Vue.js	|   http://localhost:4201	|
+|  app-2 	|   Angular	|   http://localhost:4202	|   	
+|  app-shell	|   single-spa	|   http://localhost:9000	|   	
+|  fragments	|  Angular Elements + WebComponents	|   http://localhost:5050/charts.js	| 
+|  navigation	|  Angular	|   http://localhost:4200	|   	
 
